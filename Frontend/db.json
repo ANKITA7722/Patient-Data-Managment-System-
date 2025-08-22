@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "id": "5cbc",
+      "name": "Ankita bobde",
+      "gender": "Female",
+      "email": "bobdeankita24@gmail.com",
+      "mobile": "7722843205",
+      "dob": "2025-08-20",
+      "branch": "Ashoka Garden",
+      "cast": "Hindu"
+    },
+    {
+      "id": "44a6",
+      "name": "Nikita",
+      "gender": "Female",
+      "email": "nikita@gmail.com",
+      "mobile": "1111111143",
+      "dob": "2025-08-20",
+      "branch": "Ashoka Garden",
+      "cast": "Muslim"
+    },
+    {
+      "id": "fde9",
+      "name": "nilesh",
+      "gender": "Male",
+      "email": "nilesh12@gmail.com",
+      "mobile": "1234556789",
+      "dob": "2025-07-29",
+      "branch": "Awadh Puri",
+      "cast": "Hindu"
+    },
+    {
+      "id": "3cdf",
+      "name": "megha",
+      "gender": "Female",
+      "email": "megha@gmail.com",
+      "mobile": "1234556789",
+      "dob": "2025-08-22",
+      "branch": "Awadh Puri",
+      "cast": "Other"
+    },
+    {
+      "id": "dbb4",
+      "name": "nilima bobde",
+      "gender": "Female",
+      "email": "nilima12@gmail.com",
+      "mobile": "7722843205",
+      "dob": "2025-08-06",
+      "branch": "Awadh Puri",
+      "cast": "Muslim"
+    },
+    {
+      "id": "ee54",
+      "name": "kushi",
+      "gender": "Female",
+      "email": "kushi@123",
+      "mobile": "7722843205",
+      "dob": "2025-09-04",
+      "branch": "Ashoka Garden",
+      "cast": "Hindu"
+    },
+    {
+      "id": "3003",
+      "name": "Nikita",
+      "gender": "Female",
+      "email": "nikita@gmail.com",
+      "mobile": "0111111143",
+      "dob": "2025-07-30",
+      "branch": "Ashoka Garden",
+      "cast": "Muslim"
+    },
+    {
+      "id": "4674",
+      "name": "Nikita",
+      "gender": "Female",
+      "email": "nikita@gmail.com",
+      "mobile": "1111111143",
+      "dob": "2025-08-20",
+      "branch": "Ashoka Garden",
+      "cast": "Muslim"
+    },
+    {
+      "id": "d2b6",
+      "name": "admin",
+      "gender": "Male",
+      "email": "nikita@gmail.com",
+      "mobile": "7722843205",
+      "dob": "2025-08-02",
+      "branch": "Ashoka Garden",
+      "cast": "Muslim"
+    },
+    {
+      "id": "d3d5",
+      "name": "Nikita",
+      "gender": "Male",
+      "email": "megha@gmail.com",
+      "mobile": "1111111143",
+      "dob": "2025-08-08",
+      "branch": "Awadh Puri",
+      "cast": "Muslim"
+    },
+    {
+      "id": "59fa",
+      "name": "Nikita",
+      "gender": "Female",
+      "email": "megha@gmail.com",
+      "mobile": "1111111143",
+      "dob": "2025-08-15",
+      "branch": "Ashoka Garden",
+      "cast": "Other"
+    },
+    {
+      "id": "837b",
+      "name": "manisha",
+      "gender": "Female",
+      "email": "manish12@gmail.com",
+      "mobile": "1234567801",
+      "dob": "2025-08-29",
+      "branch": "Awadh Puri",
+      "cast": "Buddhist"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "admin": "admin",
+      "password": "admin@123"
+    }
+  ]
+}

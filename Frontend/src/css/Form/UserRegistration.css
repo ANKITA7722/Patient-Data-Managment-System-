@@ -1,0 +1,111 @@
+.registration-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registration-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c3e50;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+  background: #f7faff;
+  transition: all 0.3s ease;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+  border-color: #6a11cb;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.25);
+  transform: scale(1.02);
+}
+
+/* Button Center */
+.registration-form button {
+  grid-column: span 2; /* full width */
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.registration-form button:hover {
+  opacity: 0.95;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.3);
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .registration-container {
+    margin: 20px;
+    padding: 22px;
+  }
+
+  .registration-form button {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
