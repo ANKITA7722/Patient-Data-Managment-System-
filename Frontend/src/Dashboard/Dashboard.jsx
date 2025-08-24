@@ -24,9 +24,16 @@ const navigate = useNavigate();
   }, []);
 
 
-  const handleAddUser = () => {
-    navigate("/userregistration");
-  };
+  // const handleAddUser = () => {
+  //   navigate("/userregistration");
+  // };
+
+
+  const handleAddUser = (e) => {
+   e.preventDefault();
+  navigate("/userregistration");
+};
+
 
 
   // const handleLogout = () => {
@@ -52,19 +59,17 @@ const navigate = useNavigate();
 
   return (
     <div className="dashboard-container">
-      {/* <button className="menu-btn" onClick={toggleSidebar}>
-        ☰
-      </button> */}
-      {/* <Sidebar isOpen={isOpen} /> */}
+      
+      
       <div className="main-content">
-        {/* <Header adminName={adminName} onLogout={handleLogout} /> */}
+        
        
         <div className="dashboard-cards">
           {/* Total Users */}
           <div className="card card-1">
             <div className="card-left">
-              <h3>Total Users</h3>
-              <button onClick={handleAddUser}>Add User</button>
+              <h3>Total Visitors</h3>
+              <button onClick={handleAddUser}>Add Visitor</button>
             </div>
             <div className="card-right">
               <div className="circle">{users.length}</div>

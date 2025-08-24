@@ -54,9 +54,9 @@
 
 /* Card Base */
 .card {
-  display: flex;
+  display: grid;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   padding: 18px;
   border-radius: 14px;
   color: #fff;
@@ -83,18 +83,23 @@
 }
 
 .card-left h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  margin: 5px 0 8px;
+  font-size: 25px;
   font-weight: 700;
+  color: #fff;
 }
 
 .card-left button {
+  pointer-events: auto !important;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  
   background: #fff;
-  color: #333;
+  color: #db0909;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 20px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s;
@@ -107,8 +112,8 @@
 /* Right part */
 .card-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
 }
 
 .circle {
@@ -122,7 +127,7 @@
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  animation: pulse 2s infinite;
+  /* animation: pulse 2s infinite; */
 }
 
 /* Animation */
