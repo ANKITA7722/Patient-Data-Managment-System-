@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
 import UsersTable from "./UsersTable";
 import "../css/Dashboard/Dashboard.css";
+import { FaUserFriends, FaHospital, FaEnvelope } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 //import AdminProfile from "../admin/AdminProfile";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [users, setUsers] = useState([]);
+const navigate = useNavigate();
   // const adminName = "Admin"; // You can make this dynamic
 
   const [adminName, setAdminName] = useState("Admin User"); // ✅ login ke baad set hoga
@@ -15,11 +17,17 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch users from JSON
-    fetch("http://localhost:5000/users")
+    fetch("http://localhost:3000/users")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error(err));
   }, []);
+
+
+  const handleAddUser = () => {
+    navigate("/userregistration");
+  };
+
 
   // const handleLogout = () => {
   //   window.location.href = "/admin-login";
@@ -52,10 +60,60 @@ const Dashboard = () => {
         {/* <Header adminName={adminName} onLogout={handleLogout} /> */}
        
         <div className="dashboard-cards">
-          <div className="card">Total Users: {users.length}</div>
-          <div className="card">Ashoka Garden: {ashokaCount}</div>
-          <div className="card">Awadh Puri: {awadhCount}</div>
-          <div className="card">Messages Sent: 0</div>
+          {/* Total Users */}
+          <div className="card card-1">
+            <div className="card-left">
+              <h3>Total Users</h3>
+              <button onClick={handleAddUser}>Add User</button>
+            </div>
+            <div className="card-right">
+              <div className="circle">{users.length}</div>
+            </div>
+          </div>
+
+          {/* Ashoka Garden */}
+          <div className="card card-2">
+            <div className="card-left">
+              <h3>Ashoka Garden</h3>
+              <button onClick={handleAddUser}>Add User</button>
+            </div>
+            <div className="card-right">
+              <div className="circle">
+                <FaHospital />
+              </div>
+            </div>
+          </div>
+
+
+
+          {/* Awadh Puri */}
+          <div className="card card-3">
+            <div className="card-left">
+              <h3>Awadh Puri</h3>
+              <button onClick={handleAddUser}>Add User</button>
+            </div>
+            <div className="card-right">
+              <div className="circle">
+                <FaUserFriends />
+              </div>
+            </div>
+          </div>
+
+
+          {/* Messages */}
+          <div className="card card-4">
+            <div className="card-left">
+              <h3>Messages Sent</h3>
+              <button onClick={handleAddUser}>Add User</button>
+            </div>
+            <div className="card-right">
+              <div className="circle">
+                <FaEnvelope />
+              </div>
+            </div>
+          </div>
+        
+
         </div>
 
         <UsersTable users={users} />
@@ -73,3 +131,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

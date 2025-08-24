@@ -69,7 +69,7 @@
   padding: 8px 12px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 300; /* above sidebar */
+  z-index: 9999; /* above sidebar */
 }
 
 /* Mobile: Sidebar overlays, not push */

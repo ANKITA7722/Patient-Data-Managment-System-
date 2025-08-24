@@ -174,7 +174,7 @@ const UserRegistration = () => {
     gender: "",
     email: "",
     mobile: "",
-    dob: "",
+    date: "",
     branch: "",
     cast: "",
   });
@@ -194,7 +194,7 @@ const UserRegistration = () => {
       !formData.gender ||
       !formData.email ||
       !formData.mobile ||
-      !formData.dob ||
+      !formData.date ||
       !formData.branch ||
       !formData.cast
     ) {
@@ -222,7 +222,7 @@ const UserRegistration = () => {
           gender: "",
           email: "",
           mobile: "",
-          dob: "",
+          date: "",
           branch: "",
           cast: "",
         });
@@ -284,8 +284,8 @@ const UserRegistration = () => {
 
           <input
             type="date"
-            name="dob"
-            value={formData.dob}
+            name="date"
+            value={formData.date}
             onChange={handleChange}
             required
           />

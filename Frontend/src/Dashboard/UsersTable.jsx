@@ -102,7 +102,7 @@ const UsersTable = () => {
               <th>Gender</th>
               <th>Email</th>
               <th>Mobile</th>
-              <th>DOB</th>
+              <th>Date</th>
               <th>Branch</th>
               <th>Cast</th>
             </tr>
@@ -115,7 +115,7 @@ const UsersTable = () => {
                 <td>{user.gender}</td>
                 <td>{user.email}</td>
                 <td>{user.mobile}</td>
-                <td>{user.dob}</td>
+                <td>{user.date}</td>
                 <td>{user.branch}</td>
                 <td>{user.cast}</td>
               </tr>

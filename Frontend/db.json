@@ -6,7 +6,7 @@
       "gender": "Female",
       "email": "bobdeankita24@gmail.com",
       "mobile": "7722843205",
-      "dob": "2025-08-20",
+      "date": "2025-08-20",
       "branch": "Ashoka Garden",
       "cast": "Hindu"
     },
@@ -16,7 +16,7 @@
       "gender": "Female",
       "email": "nikita@gmail.com",
       "mobile": "1111111143",
-      "dob": "2025-08-20",
+      "date": "2025-08-20",
       "branch": "Ashoka Garden",
       "cast": "Muslim"
     },
@@ -26,7 +26,7 @@
       "gender": "Male",
       "email": "nilesh12@gmail.com",
       "mobile": "1234556789",
-      "dob": "2025-07-29",
+      "date": "2025-07-29",
       "branch": "Awadh Puri",
       "cast": "Hindu"
     },
@@ -36,7 +36,7 @@
       "gender": "Female",
       "email": "megha@gmail.com",
       "mobile": "1234556789",
-      "dob": "2025-08-22",
+      "date": "2025-08-22",
       "branch": "Awadh Puri",
       "cast": "Other"
     },
@@ -46,7 +46,7 @@
       "gender": "Female",
       "email": "nilima12@gmail.com",
       "mobile": "7722843205",
-      "dob": "2025-08-06",
+      "date": "2025-08-06",
       "branch": "Awadh Puri",
       "cast": "Muslim"
     },
@@ -56,7 +56,7 @@
       "gender": "Female",
       "email": "kushi@123",
       "mobile": "7722843205",
-      "dob": "2025-09-04",
+      "date": "2025-09-04",
       "branch": "Ashoka Garden",
       "cast": "Hindu"
     },
@@ -66,7 +66,7 @@
       "gender": "Female",
       "email": "nikita@gmail.com",
       "mobile": "0111111143",
-      "dob": "2025-07-30",
+      "date": "2025-07-30",
       "branch": "Ashoka Garden",
       "cast": "Muslim"
     },
@@ -76,7 +76,7 @@
       "gender": "Female",
       "email": "nikita@gmail.com",
       "mobile": "1111111143",
-      "dob": "2025-08-20",
+      "date": "2025-08-20",
       "branch": "Ashoka Garden",
       "cast": "Muslim"
     },
@@ -86,7 +86,7 @@
       "gender": "Male",
       "email": "nikita@gmail.com",
       "mobile": "7722843205",
-      "dob": "2025-08-02",
+      "date": "2025-08-02",
       "branch": "Ashoka Garden",
       "cast": "Muslim"
     },
@@ -96,7 +96,7 @@
       "gender": "Male",
       "email": "megha@gmail.com",
       "mobile": "1111111143",
-      "dob": "2025-08-08",
+      "date": "2025-08-08",
       "branch": "Awadh Puri",
       "cast": "Muslim"
     },
@@ -106,7 +106,7 @@
       "gender": "Female",
       "email": "megha@gmail.com",
       "mobile": "1111111143",
-      "dob": "2025-08-15",
+      "date": "2025-08-15",
       "branch": "Ashoka Garden",
       "cast": "Other"
     },
@@ -116,9 +116,19 @@
       "gender": "Female",
       "email": "manish12@gmail.com",
       "mobile": "1234567801",
-      "dob": "2025-08-29",
+      "date": "2025-08-29",
       "branch": "Awadh Puri",
       "cast": "Buddhist"
+    },
+    {
+      "id": "cc9a",
+      "name": "ankita bobde",
+      "gender": "Male",
+      "email": "manish12@gmail.com",
+      "mobile": "1234556789",
+      "date": "2025-08-20",
+      "branch": "Ashoka Garden",
+      "cast": "Sikh"
     }
   ],
   "admins": [
