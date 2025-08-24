@@ -31,17 +31,38 @@
 
 // export default Layout;
 
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
-import "./css/Layout.css";
 
+import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Dashboard/Sidebar";
 import Header from "./Dashboard/Header";
+import { FaBars, FaTimes } from "react-icons/fa"; // For icons
+import "./css/Layout.css";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [isMobileView, setIsMobileView] = useState(false);
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  // Track window width and update isMobileView & sidebar visibility
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+      setIsMobileView(isMobile);
+      if (isMobile) {
+        setIsOpen(false); // hide sidebar on mobile by default
+      } else {
+        setIsOpen(true); // show sidebar on desktop
+      }
+    };
+
+    handleResize(); // Initialize on mount
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Toggle sidebar open/close
+  const toggleSidebar = () => setIsOpen((prev) => !prev);
 
   return (
     <div className={`layout-container ${isOpen ? "" : "no-sidebar"}`}>
@@ -50,17 +71,15 @@ const Layout = () => {
         <Sidebar />
       </aside>
 
-      {/* Toggle Button always visible */}
-      <button className="toggle-btn" onClick={toggleSidebar}>
-        {isOpen ? "⮜" : "☰"}
-      </button>
-
-      {/* Main Content */}
+      {/* Main content */}
       <div className="main-content">
         <header className="header">
-          <Header />
+          <Header
+            onToggleSidebar={toggleSidebar}
+            isSidebarOpen={isOpen}
+            isMobileView={isMobileView}
+          />
         </header>
-
         <div className="page-content">
           <Outlet />
         </div>
@@ -70,3 +89,6 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
+
