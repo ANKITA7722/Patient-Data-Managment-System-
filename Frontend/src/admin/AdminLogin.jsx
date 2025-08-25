@@ -34,7 +34,8 @@ const AdminLogin = () => {
         sessionStorage.setItem("admin", JSON.stringify(adminFound));
 
         // ✅ Redirect dashboard par
-        navigate("/dashboard");
+         navigate("/dashboard");
+        
       } else {
         setError("Invalid username or password");
       }
@@ -72,3 +73,5 @@ const AdminLogin = () => {
 };
 
 export default AdminLogin;
+
+

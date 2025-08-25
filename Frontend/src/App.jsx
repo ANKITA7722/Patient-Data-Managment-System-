@@ -38,6 +38,9 @@
 
 // export default App;
 
+//======================================================================
+
+//Secound code
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -74,4 +77,5 @@ const App = () => {
 
 export default App;
 
+// //=======================================================================
 
