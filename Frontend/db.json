@@ -1,9 +1,15 @@
 {
   "admin": [
     {
-      "id": 1,
-      "name": "Ankita",
+      "id": "8430",
+      "name": "admin",
       "email": "admin@gmail.com",
+      "password": "admin@123"
+    },
+    {
+      "id": "ede8",
+      "name": "ankita",
+      "email": "ankita@gmail.com",
       "password": "admin@123"
     }
   ],
@@ -64,11 +70,6 @@
       "id": "9ef4",
       "name": "awadhpuri",
       "code": "M25P1"
-    },
-    {
-      "id": "595f",
-      "name": "komal",
-      "code": "122344TY"
     }
   ]
 }

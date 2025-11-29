@@ -165,3 +165,22 @@ td button:hover {
 .change-password-btn:hover {
   background: #0056b3;
 }
+
+.icon {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.edit-icon {
+  color: #4CAF50; /* green */
+}
+
+.delete-icon {
+  color: #F44336; /* red */
+}
