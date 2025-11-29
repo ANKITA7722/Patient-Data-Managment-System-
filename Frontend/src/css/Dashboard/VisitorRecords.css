@@ -1,0 +1,163 @@
+/* VisitorRecords.css */
+
+.visitor-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #f3f4f6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.visitor-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Filters */
+.filters-section {
+  margin-bottom: 25px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Search box */
+.search-box {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search-input {
+  padding-left: 35px;
+}
+
+/* Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.clear-btn {
+  background-color: #074a9c;
+  color: #fbfcff;
+  border: none !important;
+  padding:15px;
+  border-radius: 5px;
+}
+
+.clear-btn:hover {
+  background-color: #d1d5db;
+  color: #0f0f0f;
+}
+
+.download-btn {
+  background-color: #22c55e;
+  color: white;
+  display: flex;
+  align-items: center; 
+  border: none !important;
+  padding:15px;
+  border-radius: 5px;
+}
+
+
+.download-btn:hover {
+  background-color: #16a34a;
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.visitor-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.visitor-table thead {
+  background-color: #f9fafb;
+}
+
+.visitor-table th {
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.visitor-table td {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #374151;
+  border-top: 1px solid #e5e7eb;
+}
+
+.visitor-table tr:hover {
+  background-color: #f9fafb;
+}
+
+.no-data {
+  text-align: center;
+  color: #9ca3af;
+  padding: 30px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

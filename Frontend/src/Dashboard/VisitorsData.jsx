@@ -69,7 +69,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import "../css/Dashboard/UserTable.css";
+ import "../css/Dashboard/VisitorData.css";
 
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
@@ -92,19 +92,18 @@ const UsersTable = () => {
 
   return (
     <div className="users-table">
-      <h3 className="table-title">Patients Data</h3>
+      <h3 className="table-title">Visitors Data</h3>
       <div className="table-container">
         <table className="styled-table">
           <thead>
             <tr>
               <th>No.</th>
               <th>Name</th>
-              <th>Gender</th>
-              <th>Email</th>
               <th>Mobile</th>
+              <th>time</th>
               <th>Date</th>
               <th>Branch</th>
-              <th>Cast</th>
+              <th>Religion</th>
             </tr>
           </thead>
           <tbody>
@@ -112,12 +111,11 @@ const UsersTable = () => {
               <tr key={user.id}>
                 <td>{indexOfFirst + index + 1}</td>
                 <td>{user.name}</td>
-                <td>{user.gender}</td>
-                <td>{user.email}</td>
                 <td>{user.mobile}</td>
+                <td>{user.time}</td>
                 <td>{user.date}</td>
                 <td>{user.branch}</td>
-                <td>{user.cast}</td>
+                <td>{user.religion}</td>
               </tr>
             ))}
           </tbody>

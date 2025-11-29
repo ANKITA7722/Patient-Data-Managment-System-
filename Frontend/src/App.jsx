@@ -47,11 +47,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components / Pages
 import Dashboard from "./Dashboard/Dashboard";
-import UserRegistration from "./component/Foms/UserRegistration";
-import UsersTable from "./Dashboard/UsersTable";
+import AddVisitors from "./component/Foms/AddVisitors"
+import VisitorData from "./Dashboard/VisitorsData";
 import Layout from "./Layout"; // Layout includes Sidebar + Header + Outlet
 import AdminLogin from "./admin/adminLogin";
 import AdminProfile from "./admin/AdminProfile";
+import VisitorRecords from "./Dashboard/VisitorRecords";
+import Settings from "./Dashboard/Settings";
+import Logout from "./Dashboard/Logout";
+
+
+
 
 
 const App = () => {
@@ -66,8 +72,11 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="userregistration" element={<UserRegistration />} />
-          <Route path="usertable" element={<UsersTable />} />
+          <Route path="addvisitors" element={<AddVisitors />} />
+          <Route path="visitordata" element={<VisitorData />} />
+          <Route path="visitorrecords" element={<VisitorRecords />} />
+          <Route path="settings" element={<Settings/>} />
+          <Route path="logout" element={<Logout/>} />
           <Route path="*" element={<p>Page Not Found</p>} />
         </Route>
       </Routes>
@@ -77,5 +86,52 @@ const App = () => {
 
 export default App;
 
-// //=======================================================================
+// //=======================================================================error
 
+
+
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// // Components / Pages
+// import Dashboard from "./Dashboard/Dashboard";
+// import UserRegistration from "./component/Foms/UserRegistration";
+// import UsersTable from "./Dashboard/UsersTable";
+// import Layout from "./Layout";
+// import AdminLogin from "./admin/AdminLogin";
+// import AdminProfile from "./admin/AdminProfile";
+// import ProtectedRoute from "../src/admin/ProtectedRoute"; // ✅ import
+
+
+// const PrivateRoute = ({ children }) => {
+//   const isAuth = localStorage.getItem("isAuth");
+//   return isAuth ? children : <Navigate to="/" />;
+// };
+
+// const App = () => {
+
+
+
+//   return (
+//     <Router>
+//       <Routes>
+//         {/* Public Routes */}
+//         <Route path="/" element={<AdminLogin />} />
+//         <Route path="/admin-profile" element={<AdminProfile />} />
+
+//         {/* Private Routes (only after login) */}
+//         <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>}>
+//           <Route index element={<Dashboard />} />
+//           {/* <Route path="dashboard" element={<Dashboard />} /> */}
+//           <Route path="userregistration" element={<UserRegistration />} />
+//           <Route path="usertable" element={<UsersTable />} />
+//         </Route>
+
+//         {/* Fallback */}
+//         <Route path="*" element={<p>Page Not Found</p>} />
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export default App;

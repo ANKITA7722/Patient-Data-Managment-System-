@@ -34,7 +34,7 @@ const AdminLogin = () => {
         sessionStorage.setItem("admin", JSON.stringify(adminFound));
 
         // ✅ Redirect dashboard par
-         navigate("/dashboard");
+         navigate("/layout");
         
       } else {
         setError("Invalid username or password");
@@ -75,3 +75,72 @@ const AdminLogin = () => {
 export default AdminLogin;
 
 
+
+//====================================================error
+
+
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+
+// const AdminLogin = () => {
+//   const [admin, setAdmin] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [error, setError] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setError("");
+
+//     try {
+//       // ✅ JSON Server API se admin list laa rahe
+//       const res = await fetch("http://localhost:3000/admins");
+//       if (!res.ok) throw new Error("Failed to fetch admins");
+
+//       const admins = await res.json();
+
+//       // ✅ Matching admin check
+//       const adminFound = admins.find(
+//         (admin) => admin.admin === admin && admin.password === password
+//       );
+
+//       if (adminFound) {
+//         localStorage.setItem("isAuth", "true"); // ✅ Save session
+//         navigate("/dashboard"); // ✅ redirect
+//       } else {
+//         setError("Invalid admin or Password");
+//       }
+//     } catch (err) {
+//       console.error("Login error:", err);
+//       setError("Server error! Please check JSON server.");
+//     }
+//   };
+
+//   return (
+//     <div className="admin-login-container">
+//       <h2>Admin Login</h2>
+//       <form onSubmit={handleLogin}>
+//         <input
+//           type="text"
+//           placeholder="Admin"
+//           value={admin}
+//           onChange={(e) => setAdmin(e.target.value)}
+//           required
+//         />
+//         <br />
+//         <input
+//           type="password"
+//           placeholder="Admin Password"
+//           value={password}
+//           onChange={(e) => setPassword(e.target.value)}
+//           required
+//         />
+//         <br />
+//         <button type="submit">Login</button>
+//       </form>
+//       {error && <p style={{ color: "red" }}>{error}</p>}
+//     </div>
+//   );
+// };
+
+// export default AdminLogin;

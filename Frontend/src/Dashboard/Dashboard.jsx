@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UsersTable from "./UsersTable";
+import UsersTable from "./VisitorsData";
 import "../css/Dashboard/Dashboard.css";
 import { FaUserFriends, FaHospital, FaEnvelope } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,13 @@ const navigate = useNavigate();
 
   const handleAddUser = (e) => {
    e.preventDefault();
-  navigate("/userregistration");
+  navigate("/addvisitors");
+};
+
+
+const handleViewRecords = (e) => {
+   e.preventDefault();
+  navigate("/visitorrecords");
 };
 
 
@@ -79,8 +85,8 @@ const navigate = useNavigate();
           {/* Ashoka Garden */}
           <div className="card card-2">
             <div className="card-left">
-              <h3>Ashoka Garden</h3>
-              <button onClick={handleAddUser}>Add User</button>
+              <h3>Visitor Records</h3>
+              <button onClick={handleViewRecords}>View Records</button>
             </div>
             <div className="card-right">
               <div className="circle">
@@ -130,7 +136,7 @@ const navigate = useNavigate();
       {message && <p style={{ color: "green", textAlign: "center" }}>{message}</p>}
     </div> */}
 
-<h1> hii i am ankita </h1>
+
     </div>
   );
 };

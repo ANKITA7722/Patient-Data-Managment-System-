@@ -165,22 +165,33 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/Form/UserRegistration.css";
 
 const UserRegistration = () => {
   const [formData, setFormData] = useState({
     name: "",
-    gender: "",
-    email: "",
+    time: "",
     mobile: "",
     date: "",
     branch: "",
-    cast: "",
+    religion: "",
   });
 
+  const [branches, setBranches] = useState([]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // ✅ Fetch branches from API
+  useEffect(() => {
+    fetch("http://localhost:3000/branches")
+      .then((res) => res.json())
+      .then((data) => setBranches(data))
+      .catch((err) => {
+        console.error("Branch API Error:", err);
+        setMessage("Failed to load branches!");
+      });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -191,12 +202,11 @@ const UserRegistration = () => {
 
     if (
       !formData.name ||
-      !formData.gender ||
-      !formData.email ||
+      !formData.time ||
       !formData.mobile ||
       !formData.date ||
       !formData.branch ||
-      !formData.cast
+      !formData.religion
     ) {
       setMessage("Please fill all fields");
       return;
@@ -209,6 +219,7 @@ const UserRegistration = () => {
 
     try {
       setLoading(true);
+
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -219,13 +230,13 @@ const UserRegistration = () => {
         setMessage("Registration successful!");
         setFormData({
           name: "",
-          gender: "",
-          email: "",
+          time: "",
           mobile: "",
           date: "",
           branch: "",
-          cast: "",
+          religion: "",
         });
+
         setTimeout(() => setMessage(""), 3000);
       } else {
         setMessage("Error saving user!");
@@ -241,34 +252,15 @@ const UserRegistration = () => {
   return (
     <div className="registration-container">
       <h2>Patient Registration Form</h2>
+
       <form className="registration-form" onSubmit={handleSubmit}>
         <div className="form-grid">
+          
           <input
             type="text"
             name="name"
             placeholder="Full Name"
             value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -283,6 +275,14 @@ const UserRegistration = () => {
           />
 
           <input
+            type="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+          />
+
+          <input
             type="date"
             name="date"
             value={formData.date}
@@ -290,6 +290,7 @@ const UserRegistration = () => {
             required
           />
 
+         
           <select
             name="branch"
             value={formData.branch}
@@ -297,17 +298,20 @@ const UserRegistration = () => {
             required
           >
             <option value="">Select Branch</option>
-            <option value="Ashoka Garden">Ashoka Garden</option>
-            <option value="Awadh Puri">Awadh Puri</option>
+            {branches.map((branch) => (
+              <option key={branch.id} value={branch.name}>
+                {branch.name}
+              </option>
+            ))}
           </select>
 
           <select
-            name="cast"
-            value={formData.cast}
+            name="religion"
+            value={formData.religion}
             onChange={handleChange}
             required
           >
-            <option value="">Select Cast</option>
+            <option value="">Select Religion</option>
             <option value="Hindu">Hindu</option>
             <option value="Muslim">Muslim</option>
             <option value="Christian">Christian</option>
@@ -322,6 +326,7 @@ const UserRegistration = () => {
           {loading ? "Registering..." : "Register"}
         </button>
       </form>
+
       {message && <p className="message">{message}</p>}
     </div>
   );
