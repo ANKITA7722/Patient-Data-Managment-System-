@@ -4,75 +4,77 @@ import "../css/AdminLogin.css";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const [adminData, setAdminData] = useState({ admin: "", password: "" });
+
+  const [admin, setAdmin] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
-    setAdminData({ ...adminData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  // ✅ LOGIN FUNCTION
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // clear previous error
+    setError("");
 
     try {
-      const res = await fetch("http://localhost:3000/admins"); // ✅ JSON-server ka API
-      if (!res.ok) {
-        throw new Error("Failed to fetch admins");
-      }
+      const res = await fetch("http://localhost:3000/admin");
+      if (!res.ok) throw new Error("Failed to fetch admins");
 
       const admins = await res.json();
 
+      // ✅ Match admin
       const adminFound = admins.find(
-        (admin) =>
-          admin.admin === adminData.admin &&
-          admin.password === adminData.password
+        (a) =>
+          a.email === admin || a.name === admin
+            ? a.password === password
+            : false
       );
 
       if (adminFound) {
-        // ✅ Session me data save kar rahe
         sessionStorage.setItem("admin", JSON.stringify(adminFound));
-
-        // ✅ Redirect dashboard par
-         navigate("/layout");
-        
+        navigate("/dashboard");
       } else {
-        setError("Invalid username or password");
+        setError("Invalid Admin or Password");
       }
     } catch (err) {
-      console.error("Login Error:", err);
-      setError("Server error. Make sure JSON server is running at port 3000.");
+      console.error("Login error:", err);
+      setError("Server error! Please run JSON server.");
     }
   };
 
   return (
     <div className="admin-login-container">
       <h2>Admin Login</h2>
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={handleLogin}>
+        {/* ✅ ADMIN EMAIL/USERNAME */}
         <input
           type="text"
-          name="admin"
-          placeholder="Admin Username"
-          value={adminData.admin}
-          onChange={handleChange}
+          placeholder="Email or Username"
+          value={admin}
+          onChange={(e) => setAdmin(e.target.value)}
           required
         />
+
+        {/* ✅ PASSWORD */}
         <input
           type="password"
-          name="password"
           placeholder="Password"
-          value={adminData.password}
-          onChange={handleChange}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+
+        <button type="submit">
+          Login
+        </button>
       </form>
+
       {error && <p className="error">{error}</p>}
     </div>
   );
 };
 
 export default AdminLogin;
+
 
 
 
