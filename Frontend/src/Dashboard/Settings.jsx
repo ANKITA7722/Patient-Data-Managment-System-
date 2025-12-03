@@ -123,9 +123,9 @@ function Settings() {
       setAdminEmail("");
       setAdminPassword("");
       loadAdmins();
-      setMessage({ text: "✅ Admin Added", type: "success" });
+      setMessage({ text: "Admin Added", type: "success" });
     } catch {
-      setMessage({ text: "❌ Admin add failed", type: "error" });
+      setMessage({ text: "Admin add failed", type: "error" });
     }
   };
 
@@ -146,7 +146,7 @@ function Settings() {
 
     try {
       await axios.put(`${ADMIN_API}/${editAdminId}`, {
-        id: editAdminId, // JSON server needs matching id
+        id: editAdminId, 
         name: adminName,
         email: adminEmail,
         password: adminPassword,
@@ -181,7 +181,7 @@ function Settings() {
     setAdminPassword("");
   };
 
-  /* ================= JSX ================= */
+ 
   return (
     <div className="settings-container">
       <div className="settings-box">
@@ -191,7 +191,7 @@ function Settings() {
           <div className={`message ${message.type}`}>{message.text}</div>
         )}
 
-        {/* ======= BRANCH SECTION ======= */}
+      
         <section className="branch-section">
           <h3>1. Clinic Branch</h3>
           <div className="branch-inputs">
@@ -240,7 +240,7 @@ function Settings() {
           </table>
         </section>
 
-        {/* ======= ADMIN SECTION ======= */}
+        
         <section className="password-section">
           <h3>2. Admin Management</h3>
           <input

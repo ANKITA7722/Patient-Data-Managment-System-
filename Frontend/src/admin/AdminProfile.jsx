@@ -10,20 +10,20 @@ const AdminProfile = () => {
   const menuRef = useRef();
   const navigate = useNavigate();
 
-  // ✅ GET ADMIN FROM SESSION
+ 
   useEffect(() => {
     const adminData = sessionStorage.getItem("admin");
 
     if (adminData) {
       const admin = JSON.parse(adminData);
-      setAdminName(admin.name); // ✅ show real admin name
+      setAdminName(admin.name); 
     } else {
-      navigate("/admin-login"); // ✅ safeguard
+      navigate("/admin-login");
     }
   }, [navigate]);
 
 
-  // ✅ LOGOUT
+  
   const handleLogout = () => {
     sessionStorage.removeItem("admin");
     setMessage("Admin logged out successfully!");
@@ -35,7 +35,7 @@ const AdminProfile = () => {
   };
 
 
-  // ✅ CLOSE ON OUTSIDE CLICK
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -52,7 +52,7 @@ const AdminProfile = () => {
   return (
     <div className="profile-container" ref={menuRef}>
 
-      {/* Profile trigger */}
+      
       <div
         className="profile-trigger"
         onClick={() => setOpen(!open)}
@@ -69,7 +69,7 @@ const AdminProfile = () => {
       </div>
 
 
-      {/* Dropdown */}
+    
       {open && (
         <div className="profile-dropdown">
           <div className="welcome">WELCOME!</div>

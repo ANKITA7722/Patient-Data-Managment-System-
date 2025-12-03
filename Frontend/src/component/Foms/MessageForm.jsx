@@ -5,7 +5,7 @@ const Dashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("http://localhost:3000/visitors")
       .then(res => res.json())
       .then(data => setUsers(data))
       .catch(err => console.error(err));

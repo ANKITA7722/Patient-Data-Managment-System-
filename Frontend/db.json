@@ -10,10 +10,10 @@
       "id": "ede8",
       "name": "ankita",
       "email": "ankita@gmail.com",
-      "password": "admin@123"
+      "password": "ankita@123"
     }
   ],
-  "users": [
+  "visitors": [
     {
       "id": "5cbc",
       "name": "Ankita bobde",
@@ -58,6 +58,15 @@
       "date": "2025-11-27",
       "branch": "komal",
       "religion": "Muslim"
+    },
+    {
+      "id": "03f3",
+      "name": "Soni",
+      "time": "16:25",
+      "mobile": "8085237234",
+      "date": "2025-12-03",
+      "branch": "MpNagar",
+      "religion": "Christian"
     }
   ],
   "branches": [
@@ -70,6 +79,11 @@
       "id": "9ef4",
       "name": "awadhpuri",
       "code": "M25P1"
+    },
+    {
+      "id": "86af",
+      "name": "MpNagar",
+      "code": "M2602"
     }
   ]
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Dashboard/VisitorRecords.css";
 import { Search, Download } from "lucide-react";
 
-const API_USERS = "http://localhost:3000/users";
+const API_USERS = "http://localhost:3000/visitors";
 const API_BRANCHES = "http://localhost:3000/branches";
 
 const VisitorRecords = () => {
@@ -16,7 +16,7 @@ const VisitorRecords = () => {
   const [filterReligion, setFilterReligion] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // ✅ FETCH USERS
+  
   useEffect(() => {
     fetch(API_USERS)
       .then(res => res.json())
@@ -24,7 +24,7 @@ const VisitorRecords = () => {
       .catch(err => console.error("Users API Error:", err));
   }, []);
 
-  // ✅ FETCH BRANCHES
+
   useEffect(() => {
     fetch(API_BRANCHES)
       .then(res => res.json())
@@ -32,7 +32,7 @@ const VisitorRecords = () => {
       .catch(err => console.error("Branch API Error:", err));
   }, []);
 
-  // ✅ FILTER LOGIC
+  
   const filteredVisitors = visitors.filter(v => {
 
     const matchesDate = filterDate
@@ -69,7 +69,7 @@ const VisitorRecords = () => {
     );
   });
 
-  // ✅ DOWNLOAD CSV
+  
   const handleDownloadCSV = () => {
     if (filteredVisitors.length === 0) {
       alert("No data to download");
@@ -115,7 +115,6 @@ const VisitorRecords = () => {
 
       <div className="visitor-container">
 
-        {/* FILTERS */}
         <div className="filters-section">
 
           <div className="filters-grid">
@@ -134,7 +133,6 @@ const VisitorRecords = () => {
               className="filter-input"
             />
 
-            {/* ✅ BRANCH DROPDOWN */}
             <select
               value={filterBranch}
               onChange={e => setFilterBranch(e.target.value)}
@@ -177,7 +175,7 @@ const VisitorRecords = () => {
 
           </div>
 
-          {/* BUTTONS */}
+     
           <div className="filter-buttons">
 
             <button
@@ -202,7 +200,7 @@ const VisitorRecords = () => {
 
         </div>
 
-        {/* TABLE */}
+   
         <div className="table-container">
 
           <table className="visitor-table">

@@ -17,7 +17,7 @@ const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch users from JSON
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3000/visitors")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error(err));
